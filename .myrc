@@ -1,3 +1,5 @@
+# my run commands
+
 alias g='git'
 alias ll='ls -laG'
 alias d='docker'
