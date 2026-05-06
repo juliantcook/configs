@@ -5,3 +5,5 @@ alias d='docker'
 promptText='%2~ > '
 PS1="%{$(tput bold)$(tput setaf 3)%}$promptText%{$(tput sgr0)%}"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
