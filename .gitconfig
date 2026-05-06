@@ -1,0 +1,9 @@
+[alias]
+	a = add
+	s = status
+	dc = diff --cached
+	c = commit
+	l = log
+[user]
+	name = Julian Cook
+	email = $ME_EMAIL
