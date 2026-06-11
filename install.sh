@@ -16,6 +16,13 @@ rm -f ~/.gitconfig
 cp "$(pwd)/.gitconfig" ~/.gitconfig
 git config --global user.email "$email"
 
+mkdir -p ~/.claude/skills
+for skill in "$(pwd)"/.claude/skills/*/; do
+  name=$(basename "$skill")
+  rm -rf ~/.claude/skills/"$name"
+  cp -R "$skill" ~/.claude/skills/"$name"
+done
+
 zshrc="${ZDOTDIR:-$HOME}/.zshrc"
 source_line="source ~/.myrc"
 
