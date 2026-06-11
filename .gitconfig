@@ -7,3 +7,5 @@
 	d = diff
 [user]
 	name = Julian Cook
+[url "ssh://git@github.com/"]
+        insteadOf = https://github.com/

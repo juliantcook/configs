@@ -1,8 +1,20 @@
 #!/bin/bash
 
-ln -s .myrc ~/.myrc
-ln -s .tmux.conf ~/.tmux.conf
-ln -s .gitconfig ~/.gitconfig
+set -e
+
+email="$1"
+if [ -z "$email" ]; then
+  echo "usage: $0 <email>" >&2
+  exit 1
+fi
+
+ln -sfn $(pwd)/.myrc ~/.myrc
+ln -sfn $(pwd)/.tmux.conf ~/.tmux.conf
+
+# gitconfig is copied (not symlinked) so the email can differ per workspace
+rm -f ~/.gitconfig
+cp "$(pwd)/.gitconfig" ~/.gitconfig
+git config --global user.email "$email"
 
 zshrc="${ZDOTDIR:-$HOME}/.zshrc"
 source_line="source ~/.myrc"
