@@ -15,6 +15,7 @@ ln -sfn $(pwd)/.tmux.conf ~/.tmux.conf
 rm -f ~/.gitconfig
 cp "$(pwd)/.gitconfig" ~/.gitconfig
 git config --global user.email "$email"
+git config --global core.editor vim
 
 mkdir -p ~/.claude/skills
 for skill in "$(pwd)"/.claude/skills/*/; do
